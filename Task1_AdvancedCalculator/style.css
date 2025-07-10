@@ -1,0 +1,173 @@
+/* === General Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #e0e5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* === Calculator Container === */
+.calculator {
+  background: #e0e5ec;
+  width: 400px;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 15px 15px 30px #c5c9d1, -15px -15px 30px #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* === Display Screen === */
+.display {
+  background: #e0e5ec;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 28px;
+  min-height: 60px;
+  text-align: right;
+  box-shadow: inset 5px 5px 15px #c5c9d1, inset -5px -5px 15px #ffffff;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* === Rows: Keep Buttons Inline === */
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* === Buttons === */
+.btn {
+  flex: 1;
+  padding: 15px 0;
+  min-width: 60px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #e0e5ec;
+  box-shadow: 5px 5px 10px #c5c9d1, -5px -5px 10px #ffffff;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: inset 5px 5px 10px #c5c9d1, inset -5px -5px 10px #ffffff;
+}
+
+/* === Button Color Variants === */
+.equal {
+  background: #5c8df6;
+  color: white;
+  box-shadow: 5px 5px 10px #466ed6, -5px -5px 10px #6eaaff;
+}
+.equal:active {
+  box-shadow: inset 5px 5px 10px #466ed6, inset -5px -5px 10px #6eaaff;
+}
+
+.ac,
+.del {
+  background: #f65c5c;
+  color: white;
+  box-shadow: 5px 5px 10px #d64444, -5px -5px 10px #ff7878;
+}
+
+.scientific {
+  background: #70d6ff;
+  color: #222;
+}
+
+.memory {
+  background: #ffc75f;
+}
+
+.constant {
+  background: #b8f1b0;
+}
+
+.parentheses {
+  background: #a29bfe;
+}
+
+.advanced {
+  background: #fdff8f;
+}
+
+/* === Dark Mode === */
+body.dark {
+  background: #1f1f1f;
+}
+
+body.dark .calculator {
+  background: #2c2c2c;
+  box-shadow: 10px 10px 30px #151515, -10px -10px 30px #3b3b3b;
+}
+
+body.dark .btn,
+body.dark .arrow {
+  background: #2c2c2c;
+  color: #eee;
+  box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #3d3d3d;
+}
+
+body.dark .equal {
+  background: #5c8df6;
+  color: #fff;
+}
+
+body.dark .del,
+body.dark .ac {
+  background: #f65c5c;
+  color: white;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .calculator {
+    width: 95%;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .display {
+    font-size: 22px;
+    padding: 15px;
+    min-height: 50px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 12px 0;
+    min-width: 50px;
+    border-radius: 12px;
+  }
+
+  .row {
+    gap: 8px;
+  }
+
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+  }
+}
